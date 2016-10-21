@@ -24,5 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "tape": "*"
+  },
+  "dependencies": {
+    "userid-username": "^1.0.0"
   }
 }

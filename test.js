@@ -7,15 +7,19 @@ test('homedir()', function (t) {
   var user = path.basename(home);
   var match = new RegExp(user + '$');
 
-  t.ok(homedir().match(match));
-  t.end();
+  t.ok(homedir(function (err, dir) {
+    dir.match(match);
+    t.end();
+  }));
 });
 
 test('homedir("guest")', function (t) {
   var user = "guest";
   var match = new RegExp(user + '$');
 
-  t.ok(homedir(user).match(match));
-  t.end();
+  t.ok(homedir(user, function (err, dir) {
+    dir.match(match);
+    t.end();
+  }));
 });
 
